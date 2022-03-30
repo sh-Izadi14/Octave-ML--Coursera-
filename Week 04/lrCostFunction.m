@@ -54,7 +54,7 @@ X_reg(:,1) = [];
 %               Compute the partial derivatives and set grad to the partial
 %               derivatives of the cost w.r.t. each parameter in theta
 
-J = -(1/m) * ( log(h)'* y + log(1-h)' * (1 - y) ) + (lambda/(2*m)) * (theta_reg' * theta_reg);
+J = -(1/m) * ( log(h)'* y + log(1-h)' * (1 - y) ) + (lambda/(2*m)) * sum(theta_reg.^2);
 
 grad_0 = (1/m)*( sum(h-y) );
 grad =   (1/m)*(X_reg' * (h-y)) + (lambda/m) * theta_reg;

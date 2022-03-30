@@ -107,7 +107,7 @@ pause;
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1 (you should vary this)
-lambda = 100;
+lambda = 1;
 
 % Set Options
 options = optimset('GradObj', 'on', 'MaxIter', 400);
@@ -115,7 +115,7 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 % Optimize
 [theta, J, exit_flag] = ...
 	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
-
+theta
 % Plot Boundary
 plotDecisionBoundary(theta, X, y);
 hold on;

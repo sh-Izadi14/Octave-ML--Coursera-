@@ -27,7 +27,7 @@ X_reg(:,1) = [];
 h = X*theta;
 
 J = ( 1/(2*m) ) * ( h - y )' * ( h - y ) + ...
- (lambda/(2*m)) * (theta' * theta);
+ (lambda/(2*m)) * (theta_reg' * theta_reg);
 
 grad_0 = (1/m)*( sum(h-y) );
 grad =   (1/m)*(X_reg' * (h-y)) + (lambda/m) * theta_reg;
